@@ -4,6 +4,7 @@
   "description": "\"Simple documentation tool\"",
   "main": "sdocs.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/nhevia/simple-docs/issues"
   },
-  "homepage": "https://github.com/nhevia/simple-docs#readme"
+  "homepage": "https://github.com/nhevia/simple-docs#readme",
+  "dependencies": {
+    "glob": "^7.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
