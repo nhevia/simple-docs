@@ -1,5 +1,5 @@
 {
-  "name": "@simple-docs/simple-docs",
+  "name": "@nhevia/simple-docs",
   "version": "0.1.0",
   "description": "\"Simple documentation tool\"",
   "main": "sdocs.js",
