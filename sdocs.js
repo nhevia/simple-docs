@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const fsp = require('fs').promises;
 const fs = require('fs');
 const glob = require("glob");

@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "\"Simple documentation tool\"",
   "main": "sdocs.js",
+  "bin": {
+    "sdoc": "./sdocs.js"
+  },
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
