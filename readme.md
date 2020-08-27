@@ -1,4 +1,4 @@
-![GitHub package.json version](https://img.shields.io/github/package-json/v/nhevia/simple-docs?style=flat-square) ![PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![GitHub](https://img.shields.io/github/license/nhevia/simple-docs?style=flat-square) ![Twitter Follow](https://img.shields.io/twitter/follow/nhevia?style=social)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/nhevia/simple-docs?style=flat-square) ![PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![GitHub](https://img.shields.io/github/license/nhevia/simple-docs?style=flat-square) ![Twitter Follow](https://img.shields.io/twitter/follow/n_hevia?style=social)
 
 # simple-docs
 
