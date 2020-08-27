@@ -1,4 +1,4 @@
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/nhevia/simple-docs?include_prereleases&style=flat-square) ![PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![GitHub](https://img.shields.io/github/license/nhevia/simple-docs?style=flat-square) ![Twitter Follow](https://img.shields.io/twitter/follow/nhevia?style=social)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/nhevia/simple-docs?style=flat-square) ![PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![GitHub](https://img.shields.io/github/license/nhevia/simple-docs?style=flat-square) ![Twitter Follow](https://img.shields.io/twitter/follow/nhevia?style=social)
 
 # simple-docs
 
@@ -15,12 +15,22 @@ Disclaimer: If you're working in a team with multiple people, there are better, 
 ### Installation
 
 `npm install @nhevia/simple-docs`
-or
+
+or install as a development dependency (recommended)
+
 `npm install --save-dev @nhevia/simple-docs`
 
 ### Usage
 
-Add a comment block at the start of the file, which needs to be documented, with `sdoc` preffix:
+- Add **sdoc** to package.json script:
+
+```
+"scripts": {
+  "docs": "sdoc"
+}
+```
+
+- Use a comment block at the start of any file with `sdoc` preffix:
 
 ```javascript
 /*sdoc
@@ -32,7 +42,7 @@ This is the main component
 
 ![image](https://user-images.githubusercontent.com/50466554/91441610-d4a84480-e870-11ea-9459-9d2e22c56370.png)
 
-Running `node sdocs.js` indentifies documentation blocks in your project and generates an `sdoc.md` file:
+- Run `npm run docs`. It indentifies documentation blocks in your project and generates an `sdoc.md` file:
 
 ![image](https://user-images.githubusercontent.com/50466554/91441844-323c9100-e871-11ea-8f6b-68f979038b5d.png)
 
