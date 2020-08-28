@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-![GitHub package.json version](https://img.shields.io/github/package-json/v/nhevia/simple-docs?style=flat-square) ![PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) [![Known Vulnerabilities](https://snyk.io/test/github/nhevia/simple-docs/badge.svg?targetFile=package.json)](https://snyk.io/test/github/nhevia/simple-docs?targetFile=package.json) ![GitHub](https://img.shields.io/github/license/nhevia/simple-docs?style=flat-square) ![Twitter Follow](https://img.shields.io/twitter/follow/nhevia?style=social)
-=======
-![GitHub package.json version](https://img.shields.io/github/package-json/v/nhevia/simple-docs?style=flat-square) ![PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![GitHub](https://img.shields.io/github/license/nhevia/simple-docs?style=flat-square) ![Twitter Follow](https://img.shields.io/twitter/follow/n_hevia?style=social)
->>>>>>> c0c4f82d24a0072119d1dd6fa333846a6670b22b
+![GitHub package.json version](https://img.shields.io/github/package-json/v/nhevia/simple-docs?style=flat-square) ![PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) [![Known Vulnerabilities](https://snyk.io/test/github/nhevia/simple-docs/badge.svg?targetFile=package.json)](https://snyk.io/test/github/nhevia/simple-docs?targetFile=package.json) ![GitHub](https://img.shields.io/github/license/nhevia/simple-docs?style=flat-square) ![Twitter Follow](https://img.shields.io/twitter/follow/n_hevia?style=social)
 
 # simple-docs
 
@@ -10,9 +6,9 @@
 
 ### Why?
 
-I needed a **really** simple tool to generate documentation for my 100+ components. Insert a comment block at the beggining of the file describing it and it's usage and that's it.
-
 Most major documentation libraries have tools that are beyond the current necessities for most of my projects.
+
+I needed a **really** simple tool to generate documentation for my 100+ components. Insert a comment block at the beggining of the file describing it and its usage and that's it.
 
 Disclaimer: If you're working in a team with multiple people, there are better, more tested and reliable alternatives.
 
