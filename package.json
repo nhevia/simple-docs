@@ -1,6 +1,6 @@
 {
   "name": "@nhevia/simple-docs",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "\"Simple documentation tool\"",
   "main": "sdocs.js",
   "bin": {
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/nhevia/simple-docs#readme",
   "dependencies": {
+    "commander": "^6.1.0",
     "glob": "^7.1.6"
   },
   "devDependencies": {

@@ -2,8 +2,12 @@
 const fsp = require('fs').promises;
 const fs = require('fs');
 const glob = require("glob");
+const {program} = require('commander')
 
-const filepath = './docs.md'
+program.option('-f, --file <filename>', 'output file name', 'sdocs')  
+program.parse(process.argv)
+
+const filepath = `${program.file}.md`
 
 const options = {
   ignore: '**/node_modules/**'
