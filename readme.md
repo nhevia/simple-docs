@@ -56,6 +56,17 @@ Since the generated file is markdown, it is supported inside documentation block
 
 ![image](https://user-images.githubusercontent.com/50466554/91442173-b727aa80-e871-11ea-9a97-b54b94d9d72a.png)
 
+### Options
+
+- `-f <filename>, --file <filename>`
+Set the output file name. Example:
+`sdoc -f docs-components` | `sdoc --file docs-components`
+
+### Contributing
+
+Pull requests are more than welcome. 
+
+
 ### License
 
 Copyright © 2020 Nicolas Hevia
