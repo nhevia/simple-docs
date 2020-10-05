@@ -4,7 +4,9 @@ const fs = require('fs');
 const glob = require("glob");
 const {program} = require('commander')
 
-program.option('-f, --file <filename>', 'output file name', 'sdocs')  
+program
+  .option('-f, --file <filename>', 'output file name', 'sdocs')  
+  .option('-ni, --no-index', 'do not output an index', false)
 program.parse(process.argv)
 
 const filepath = `${program.file}.md`
@@ -35,14 +37,39 @@ const readFiles = async () => {
   return Promise.all(files.map(item => readFile(item)))
 }
 
-const parseData = async () => {
+const filterFiles = async () => {
   const read = await readFiles()
   const filtered = read.filter(el => el !== '')
-  const textToWrite = filtered.map(el => `>${el.filename}\n\n  ${el.data}`)
+  return filtered
+}
+
+const formatText = (text, mode) => {
+  switch (mode) {
+    case 'index':
+      return `[${text.filename}](#${text.filename.replace(/\/|\./g,'')})`
+    case 'description':
+      return `#### ${text.filename}\n  ${text.data}`
+  }
+}
+
+const parseDescription = async () => {
+  const filtered = await filterFiles()
+  const textToWrite = filtered.map(el => formatText(el, 'description'))
   return textToWrite.join('\n')
+}
+
+const parseIndex = async () => {
+  const filtered = await filterFiles()
+  const textToWrite = filtered.map(el => formatText(el, 'index'))
+  return textToWrite.join('\n') + '\n'
 }
 
 
 (async () => {
-  await fsp.writeFile(filepath, await parseData(), 'utf8');
+  if (program.index){
+  await fsp.writeFile(filepath, await parseIndex(), 'utf8')
+  await fsp.appendFile(filepath, await parseDescription(), 'utf8')
+  } else {
+    await fsp.writeFile(filepath, await parseDescription(), 'utf8')
+  }
 })();
