@@ -41,7 +41,7 @@ const filterFiles = async () => {
 const formatText = (text, mode) => {
   switch (mode) {
     case 'index':
-      const sanitizedText = text.filename.replace(/\/|\./g,'')
+      const sanitizedText = text.filename.replace(/\/|\./g,'').replace(/ /g,'-')
       return `[${text.filename}](#${sanitizedText})`
     case 'description':
       return `#### ${text.filename}\n  ${text.data}`
