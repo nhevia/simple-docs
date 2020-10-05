@@ -2,12 +2,7 @@
 const fsp = require('fs').promises;
 const fs = require('fs');
 const glob = require("glob");
-const {program} = require('commander')
-
-program
-  .option('-f, --file <filename>', 'output file name', 'sdocs')  
-  .option('-ni, --no-index', 'do not output an index', false)
-program.parse(process.argv)
+const program = require('./program')
 
 const filepath = `${program.file}.md`
 
@@ -46,7 +41,8 @@ const filterFiles = async () => {
 const formatText = (text, mode) => {
   switch (mode) {
     case 'index':
-      return `[${text.filename}](#${text.filename.replace(/\/|\./g,'')})`
+      const sanitizedText = text.filename.replace(/\/|\./g,'')
+      return `[${text.filename}](#${sanitizedText})`
     case 'description':
       return `#### ${text.filename}\n  ${text.data}`
   }
