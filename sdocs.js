@@ -4,7 +4,9 @@ const fs = require('fs');
 const glob = require("glob");
 const {program} = require('commander')
 
-program.option('-f, --file <filename>', 'output file name', 'sdocs')  
+program
+  .option('-f, --file <filename>', 'output file name', 'sdocs')  
+  .option('-ni, --no-index', 'do not output an index', false)
 program.parse(process.argv)
 
 const filepath = `${program.file}.md`
@@ -64,6 +66,10 @@ const parseIndex = async () => {
 
 
 (async () => {
-  await fsp.writeFile(filepath, await parseIndex(), 'utf8');
-  await fsp.appendFile(filepath, await parseDescription(), 'utf8');
+  if (program.index){
+  await fsp.writeFile(filepath, await parseIndex(), 'utf8')
+  await fsp.appendFile(filepath, await parseDescription(), 'utf8')
+  } else {
+    await fsp.writeFile(filepath, await parseDescription(), 'utf8')
+  }
 })();
