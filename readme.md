@@ -4,13 +4,6 @@
 
 > A simple documentation tool.
 
-### Why?
-
-Most major documentation libraries have tools that are beyond the current necessities for most of my projects.
-
-I needed a **really** simple tool to generate documentation for my 100+ components. Insert a comment block at the beggining of the file describing it and its usage and that's it.
-
-Disclaimer: If you're working in a team with multiple people, there are better, more tested and reliable alternatives.
 
 ### Installation
 
@@ -22,7 +15,7 @@ or install as a development dependency (recommended)
 
 ### Usage
 
-- Add **sdoc** to package.json script:
+- Add **sdoc** as a package.json script:
 
 ```
 "scripts": {
@@ -40,11 +33,8 @@ This is the main component
 // your code
 ```
 
-![image](https://user-images.githubusercontent.com/50466554/91441610-d4a84480-e870-11ea-9459-9d2e22c56370.png)
+- Run `npm run docs`. It will indentify documentation blocks in your project and generates an output file (`sdoc.md` by default, on root folder):
 
-- Run `npm run docs`. It indentifies documentation blocks in your project and generates an `sdoc.md` file:
-
-![image](https://user-images.githubusercontent.com/50466554/91441844-323c9100-e871-11ea-8f6b-68f979038b5d.png)
 
 Since the generated file is markdown, it is supported inside documentation blocks.
 
@@ -58,9 +48,22 @@ Since the generated file is markdown, it is supported inside documentation block
 
 ### Options
 
-- `-f <filename>, --file <filename>`
-Set the output file name. Example:
+- `-f <filename>, --file <filename>`  
+Set the output file name:
 `sdoc -f docs-components` | `sdoc --file docs-components`
+>
+- `-ni, --no-index`  
+Set the output file name.
+`sdoc -ni` | `sdoc --no-index`
+
+
+### Why?
+
+Most major documentation libraries have tools that are beyond the current necessities for personal projects.
+
+I needed a **really** simple tool to generate documentation for my scripts. Insert a comment block at the beggining of the file describing it and its usage and that's it.
+
+Note that if you're working in a team with multiple people, there are better, more tested and reliable alternatives.
 
 ### Contributing
 

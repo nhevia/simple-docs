@@ -1,3 +1,0 @@
-/*sdoc
-asdasdojasodjasopijdoasijd
-*/
