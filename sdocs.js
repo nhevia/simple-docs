@@ -39,34 +39,31 @@ const readFiles = () =>
     .all(files.map(readFile))
     .then(result => result.filter(Boolean))
 
-const formatText = (text, mode) => {
-  switch (mode) {
-    case 'index':
-      const sanitizedText = text.filename.replace(/\/|\./g, '').replace(/ /g, '-')
-      return `[${text.filename}](#${sanitizedText})`
-    case 'description':
-      return `#### ${text.filename}\n  ${text.data}`
-  }
+
+function sanitizeIndexText({ filename }) {
+  const sanitizedText = filename.replace(/\/|\./g, '').replace(/ /g, '-')
+
+  return `[${filename}](#${sanitizedText})`
 }
 
-const parseDescription = async () => {
-  const filtered = await readFiles()
-  const textToWrite = filtered.map(el => formatText(el, 'description'))
-  return textToWrite.join('\n')
-}
+const parseDescription = filesData =>
+  filesData
+    .map(text => `#### ${text.filename}\n  ${text.data}`)
+    .join('\n')
 
-const parseIndex = async () => {
-  const filtered = await readFiles()
-  const textToWrite = filtered.map(el => formatText(el, 'index'))
-  return textToWrite.join('\n') + '\n'
-}
+const parseIndex = filesData =>
+  filesData
+    .map(sanitizeIndexText)
+    .join('\n') + '\n'
 
 
 (async () => {
-  if (program.index){
-  await fsp.writeFile(filepath, await parseIndex(), 'utf8')
-  await fsp.appendFile(filepath, await parseDescription(), 'utf8')
+  const filesData = await readFiles()
+
+  if (program.index) {
+    await fsp.writeFile(filepath, parseIndex(filesData), 'utf8')
+    await fsp.appendFile(filepath, parseDescription(filesData), 'utf8')
   } else {
-    await fsp.writeFile(filepath, await parseDescription(), 'utf8')
+    await fsp.writeFile(filepath, parseDescription(filesData), 'utf8')
   }
 })();
