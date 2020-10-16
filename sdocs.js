@@ -34,20 +34,15 @@ const readFile = filename =>
     })
   })
 
-const readFiles = async () => {
-  return Promise.all(files.map(item => readFile(item)))
-}
-
-const filterFiles = async () => {
-  const read = await readFiles()
-  const filtered = read.filter(el => el !== '')
-  return filtered
-}
+const readFiles = () =>
+  Promise
+    .all(files.map(readFile))
+    .then(result => result.filter(Boolean))
 
 const formatText = (text, mode) => {
   switch (mode) {
     case 'index':
-      const sanitizedText = text.filename.replace(/\/|\./g,'').replace(/ /g,'-')
+      const sanitizedText = text.filename.replace(/\/|\./g, '').replace(/ /g, '-')
       return `[${text.filename}](#${sanitizedText})`
     case 'description':
       return `#### ${text.filename}\n  ${text.data}`
@@ -55,13 +50,13 @@ const formatText = (text, mode) => {
 }
 
 const parseDescription = async () => {
-  const filtered = await filterFiles()
+  const filtered = await readFiles()
   const textToWrite = filtered.map(el => formatText(el, 'description'))
   return textToWrite.join('\n')
 }
 
 const parseIndex = async () => {
-  const filtered = await filterFiles()
+  const filtered = await readFiles()
   const textToWrite = filtered.map(el => formatText(el, 'index'))
   return textToWrite.join('\n') + '\n'
 }
