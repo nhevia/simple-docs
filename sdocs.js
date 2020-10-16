@@ -12,21 +12,27 @@ const options = {
 
 const files = glob.sync("**/**.+(js|jsx|ts|tsx)", options)
 
-const readFile = file => {
-  return new Promise((resolve) => {
-    fs.readFile(file, {encoding: 'utf-8'}, function (err, data) {
-      if (err) throw err;
-      
+const readFile = filename =>
+  new Promise((resolve, reject) => {
+    fs.readFile(filename, { encoding: 'utf-8' }, (err, data) => {
+      if (err) {
+        return reject(err)
+      }
+
       const start = data.indexOf('/*sdoc')
-      if (start > -1 && start < 10 ) {
-        const ends = data.indexOf('*/')
-        resolve({filename: file, data: data.slice(start + 7, ends).trim()})
-      } else {
-        resolve('')
-      }     
-    });
+
+      if (start <= -1 || start >= 10) {
+        return resolve('')
+      }
+
+      const ends = data.indexOf('*/')
+
+      resolve({
+        filename,
+        data: data.slice(start + 7, ends).trim()
+      })
+    })
   })
-}
 
 const readFiles = async () => {
   return Promise.all(files.map(item => readFile(item)))
