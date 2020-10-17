@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "glob": "^7.1.6"
   },
   "devDependencies": {
+    "jest": "^26.5.3",
     "nodemon": "^2.0.4"
   }
 }
