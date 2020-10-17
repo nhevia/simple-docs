@@ -54,7 +54,7 @@ export const parseDescription = filesData =>
 export const parseIndex = filesData =>
   filesData
     .map(sanitizeIndexText)
-    .join('\n') + '\n'
+    .join('\n') + '\n';
 
 (async () => {
   const filesData = await readFiles()
