@@ -12,7 +12,7 @@ const options = {
 
 const files = glob.sync("**/**.+(js|jsx|ts|tsx)", options)
 
-const readFile = filename =>
+export const readFile = filename =>
   new Promise((resolve, reject) => {
     fs.readFile(filename, { encoding: 'utf-8' }, (err, data) => {
       if (err) {
@@ -34,29 +34,29 @@ const readFile = filename =>
     })
   })
 
-const readFiles = () =>
+export const readFiles = () =>
   Promise
     .all(files.map(readFile))
     .then(result => result.filter(Boolean))
 
 
-function sanitizeIndexText({ filename }) {
+export function sanitizeIndexText({ filename }) {
   const sanitizedText = filename.replace(/\/|\./g, '').replace(/ /g, '-')
 
   return `[${filename}](#${sanitizedText})`
 }
 
-const parseDescription = filesData =>
+export const parseDescription = filesData =>
   filesData
     .map(text => `#### ${text.filename}\n  ${text.data}`)
     .join('\n')
 
-const parseIndex = filesData =>
+export const parseIndex = filesData =>
   filesData
     .map(sanitizeIndexText)
-    .join('\n') + '\n'
+    .join('\n') + '\n';
 
-;(async () => {
+(async () => {
   const filesData = await readFiles()
 
   if (program.index) {
