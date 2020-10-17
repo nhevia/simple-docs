@@ -56,8 +56,7 @@ const parseIndex = filesData =>
     .map(sanitizeIndexText)
     .join('\n') + '\n'
 
-
-(async () => {
+;(async () => {
   const filesData = await readFiles()
 
   if (program.index) {
