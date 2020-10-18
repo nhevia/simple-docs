@@ -2,7 +2,7 @@
 const fsp = require('fs').promises;
 const fs = require('fs');
 const glob = require("glob");
-const {Command} = require('./program')
+const {Command} = require('./command/command')
 const {command} = new Command()
 
 const filepath = `${command.file}.md`
