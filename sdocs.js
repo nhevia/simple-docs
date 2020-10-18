@@ -2,9 +2,10 @@
 const fsp = require('fs').promises;
 const fs = require('fs');
 const glob = require("glob");
-const program = require('./program')
+const {Command} = require('./program')
+const {command} = new Command()
 
-const filepath = `${program.file}.md`
+const filepath = `${command.file}.md`
 
 const options = {
   ignore: '**/node_modules/**'
@@ -59,7 +60,7 @@ const parseIndex = filesData =>
 (async () => {
   const filesData = await readFiles()
 
-  if (program.index) {
+  if (command.index) {
     await fsp.writeFile(filepath, parseIndex(filesData), 'utf8')
     await fsp.appendFile(filepath, parseDescription(filesData), 'utf8')
   } else {
