@@ -1,4 +1,5 @@
-![GitHub package.json version](https://img.shields.io/github/package-json/v/nhevia/simple-docs?style=flat-square) ![PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) [![Known Vulnerabilities](https://snyk.io/test/github/nhevia/simple-docs/badge.svg?targetFile=package.json)](https://snyk.io/test/github/nhevia/simple-docs?targetFile=package.json) ![GitHub](https://img.shields.io/github/license/nhevia/simple-docs?style=flat-square) ![Twitter Follow](https://img.shields.io/twitter/follow/n_hevia?style=social)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/nhevia/simple-docs?style=flat-square) ![CircleCI Build Status](https://circleci.com/gh/nhevia/simple-docs.svg?style=shield "CircleCI Build Status") [![Known Vulnerabilities](https://snyk.io/test/github/nhevia/simple-docs/badge.svg?targetFile=package.json)](https://snyk.io/test/github/nhevia/simple-docs?targetFile=package.json)
+![PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![GitHub](https://img.shields.io/github/license/nhevia/simple-docs?style=flat-square) ![Twitter Follow](https://img.shields.io/twitter/follow/n_hevia?style=social)
 
 # simple-docs
 
