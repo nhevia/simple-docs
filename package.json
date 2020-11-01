@@ -2,12 +2,12 @@
   "name": "@nhevia/simple-docs",
   "version": "0.4.0",
   "description": "\"Simple documentation tool\"",
-  "main": "sdocs.js",
+  "main": "src/sdocs.js",
   "bin": {
-    "sdoc": "./sdocs.js"
+    "sdoc": "./src/sdocs.js"
   },
   "scripts": {
-    "start": "node sdocs.js",
+    "start": "node src/sdocs.js",
     "test": "jest"
   },
   "repository": {
@@ -33,6 +33,12 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "babel-jest": "^26.5.2",
-    "jest": "^26.5.3"
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "jest": "^26.5.3",
+    "prettier": "^2.1.2"
   }
 }
