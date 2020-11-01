@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-const fsp = require('fs').promises;
-const fs = require('fs');
-const glob = require("glob");
-const {Command} = require('./command/command')
-const {command} = new Command()
+const fsp = require('fs').promises
+const fs = require('fs')
+const glob = require('glob')
+const { Command } = require('./command/command')
+const { command } = new Command()
 
 const filepath = `${command.file}.md`
 
@@ -11,7 +11,7 @@ const options = {
   ignore: '**/node_modules/**'
 }
 
-const files = glob.sync("**/**.+(js|jsx|ts|tsx)", options)
+const files = glob.sync('**/**.+(js|jsx|ts|tsx)', options)
 
 const readFile = filename =>
   new Promise((resolve, reject) => {
@@ -40,7 +40,6 @@ const readFiles = () =>
     .all(files.map(readFile))
     .then(result => result.filter(Boolean))
 
-
 const sanitizeIndexText = ({ filename }) => {
   const sanitizedText = filename.replace(/\/|\./g, '').replace(/ /g, '-')
 
@@ -66,7 +65,7 @@ const parseIndex = filesData =>
   } else {
     await fsp.writeFile(filepath, parseDescription(filesData), 'utf8')
   }
-})();
+})()
 
 module.exports = {
   sanitizeIndexText,
