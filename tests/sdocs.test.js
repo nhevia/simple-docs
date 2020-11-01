@@ -1,4 +1,4 @@
-import { parseIndex, parseDescription, sanitizeIndexText } from '../sdocs'
+import { parseIndex, parseDescription, sanitizeIndexText } from '../src/sdocs'
 
 describe('parsers', () => {
 
