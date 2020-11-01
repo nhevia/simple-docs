@@ -1,4 +1,4 @@
-const {Command} = require ('../command/command')
+const {Command} = require('../src/command/command')
 
 describe("Command", () => {
 
