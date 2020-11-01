@@ -11,7 +11,7 @@ class Command {
     this.command = command;
   }
 
-  parse = (args) => {
+  parse (args) {
     this.command.parse(args)
   }
 }
