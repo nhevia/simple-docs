@@ -40,7 +40,10 @@ const readFiles = () =>
     .then(result => result.filter(Boolean))
 
 const sanitizeIndexText = ({ filename }) => {
-  const sanitizedText = filename.replace(/\/|\./g, '').replace(/ /g, '-')
+  const sanitizedText = filename
+    .replace(/\/|\./g, '')
+    .replace(/ /g, '-')
+    .toLowerCase()
 
   return `[${filename}](#${sanitizedText})`
 }
