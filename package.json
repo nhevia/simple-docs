@@ -1,6 +1,6 @@
 {
   "name": "@nhevia/simple-docs",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "description": "\"Simple documentation tool\"",
   "main": "src/sdocs.js",
   "bin": {
