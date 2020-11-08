@@ -1,20 +1,10 @@
-const commander = require('commander')
+const {program} = require('commander')
 
-class Command {
-  constructor () {
-    const command = new commander.Command()
-    command
-      .option('-f, --file <filename>', 'output file name', 'sdocs')
-      .option('-ni, --no-index', 'do not output an index', false)
+// available parameters
+program
+  .option('-f, --file <filename>', 'output file name', 'sdocs')  
+  .option('-ni, --no-index', 'do not output an index', false)
+  
+program.parse(process.argv)
 
-    this.command = command
-  }
-
-  parse (args) {
-    this.command.parse(args)
-  }
-}
-
-module.exports = {
-  Command
-}
+module.exports = program
