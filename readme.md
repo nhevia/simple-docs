@@ -8,10 +8,6 @@
 
 ### Installation
 
-`npm install @nhevia/simple-docs`
-
-or install as a development dependency (recommended)
-
 `npm install --save-dev @nhevia/simple-docs`
 
 ### Usage
