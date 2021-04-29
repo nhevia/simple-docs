@@ -9,8 +9,8 @@
   "scripts": {
     "start": "node src/sdocs.js",
     "test": "jest",
-    "lint": "eslint --ext .js src",
-    "lint:fix": "eslint --ext .js src --fix"
+    "lint": "eslint --ext .js src tests",
+    "lint:fix": "eslint --ext .js src tests --fix"
   },
   "repository": {
     "type": "git",
